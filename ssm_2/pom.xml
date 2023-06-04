@@ -1,0 +1,229 @@
+<!-- 定义项目的命名空间 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  <!-- 指定项目的schema -->
+  <modelVersion>4.0.0</modelVersion>  <!-- 指定项目模型版本 -->
+  <groupId>com.how2java</groupId>  <!-- 指定项目的groupId -->
+  <artifactId>ssm</artifactId>  <!-- 指定项目的artifactId -->
+  <version>0.0.1-SNAPSHOT</version>  <!-- 指定项目的版本号 -->
+  <packaging>war</packaging>  <!-- 指定项目的打包方式 -->
+
+  <properties>  <!-- 定义项目的属性 -->
+    <spring.version>4.1.3.RELEASE</spring.version>  <!-- 定义Spring框架的版本号 -->
+    <pagehelper.version>5.1.2-beta</pagehelper.version>  <!-- 定义PageHelper插件的版本号 -->
+    <mysql.version>5.1.6</mysql.version>  <!-- 定义MySQL数据库驱动的版本号 -->
+    <mybatis.spring.version>1.2.3</mybatis.spring.version>  <!-- 定义MyBatis Spring集成的版本号 -->
+    <mybatis.version>3.1.1</mybatis.version>  <!-- 定义MyBatis的版本号 -->
+    <junit.version>4.12</junit.version>  <!-- 定义JUnit的版本号 -->
+    <jstl.version>1.2</jstl.version>  <!-- 定义JSTL的版本号 -->
+    <jsqlparser.version>1.0</jsqlparser.version>  <!-- 定义jsqlparser的版本号 -->
+    <jackson.version>1.2.7</jackson.version>  <!-- 定义Jackson的版本号 -->
+    <servlet-api.version>3.1.0</servlet-api.version>  <!-- 定义Servlet API的版本号 -->
+    <druid.version>1.0.18</druid.version>  <!-- 定义Druid数据源的版本号 -->
+    <log4j.version>1.2.16</log4j.version>  <!-- 定义Log4j的版本号 -->
+    <commons-logging.version>1.2</commons-logging.version>  <!-- 定义Commons Logging的版本号 -->
+    <commons-fileupload.version>1.2.1</commons-fileupload.version>  <!-- 定义Commons FileUpload的版本号 -->
+    <commons-io.version>1.3.2</commons-io.version>  <!-- 定义Commons IO的版本号 -->
+    <commons-lang.version>2.6</commons-lang.version>  <!-- 定义Commons Lang的版本号 -->
+    <aopalliance.version>1.0</aopalliance.version>  <!-- 定义AOP Alliance的版本号 -->
+    <mybatis-generator.version>1.3.5</mybatis-generator.version>  <!-- 定义MyBatis Generator的版本号 -->
+  </properties>
+
+  <dependencies>  <!-- 定义项目的依赖 -->
+    <dependency>  <!-- 定义JUnit的依赖 -->
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义MyBatis的依赖 -->
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义MyBatis Spring集成的依赖 -->
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>${mybatis.spring.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义MySQL数据库驱动的依赖 -->
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Druid数据源的依赖 -->
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>${druid.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Spring框架的依赖 -->
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Spring测试框架的依赖 -->
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Spring框架的依赖 -->
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Spring MVC框架的依赖 -->
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Spring JDBC框架的依赖 -->
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Spring AOP框架的依赖 -->
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义JSTL的依赖 -->
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${jstl.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Servlet API的依赖 -->
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>  <!-- 定义PageHelper插件的依赖 -->
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>${pagehelper.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义jsqlparser的依赖 -->
+      <groupId>com.github.jsqlparser</groupId>
+      <artifactId>jsqlparser</artifactId>
+      <version>${jsqlparser.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Log4j的依赖 -->
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Commons Logging的依赖 -->
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>${commons-logging.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Commons FileUpload的依赖 -->
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>${commons-fileupload.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Commons IO的依赖 -->
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${commons-io.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义Commons Lang的依赖 -->
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>${commons-lang.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义AOP Alliance的依赖 -->
+      <groupId>aopalliance</groupId>
+      <artifactId>aopalliance</artifactId>
+      <version>${aopalliance.version}</version>
+    </dependency>
+
+    <dependency>  <!-- 定义MyBatis Generator的依赖 -->
+      <groupId>org.mybatis.generator</groupId>
+      <artifactId>mybatis-generator-core</artifactId>
+      <version>${mybatis-generator.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>  <!-- 定义项目的构建配置 -->
+    <finalName>${project.artifactId}</finalName>  <!-- 定义构建后的文件名 -->
+    <plugins>  <!-- 定义构建插件 -->
+      <plugin>  <!-- 定义资源文件拷贝插件 -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>  <!-- 定义Java编译插件 -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+    <pluginManagement>  <!-- 定义插件管理 -->
+      <plugins>
+        <plugin>  <!-- 配置Tomcat插件 -->
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+   <!-- 定义资源文件夹 -->
+<resource>
+  <!-- 指定资源文件夹路径 -->
+  <directory>src/main/resources</directory>
+  <!-- 指定需要包含的资源文件类型 -->
+  <includes>
+    <include>**/*.properties</include>
+    <include>**/*.xml</include>
+    <include>**/*.tld</include>
+  </includes>
+  <!-- 是否需要进行过滤 -->
+  <filtering>false</filtering>
+</resource>
+
+<!-- 定义另一个资源文件夹 -->
+<resource>
+  <!-- 指定资源文件夹路径 -->
+  <directory>src/main/java</directory>
+  <!-- 指定需要包含的资源文件类型 -->
+  <includes>
+    <include>**/*.properties</include>
+    <include>**/*.xml</include>
+  </includes>
+  <!-- 是否需要进行过滤 -->
+  <filtering>false</filtering>
+</resource>
+
+  </build>
+
+
+</project>

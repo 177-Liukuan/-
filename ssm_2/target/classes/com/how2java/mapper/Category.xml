@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 定义命名空间，用于与接口进行映射 -->
+	<mapper namespace="com.how2java.mapper.CategoryMapper">
+	    
+	    <!-- 定义插入操作，参数类型为Category -->
+	    <insert id="add" parameterType="Category" >
+	        insert into category_ (id, name ) values (#{id},#{name})    
+	    </insert>
+	    
+	    <!-- 定义删除操作，参数类型为Category -->
+	    <delete id="delete" parameterType="Category" >
+	        delete from category_ where id= #{id}   
+	    </delete>
+	    
+	    <!-- 定义查询操作，参数类型为int，返回结果类型为Category -->
+	    <select id="get" parameterType="_int" resultType="Category">
+	        select * from   category_  where id= #{id}    
+	    </select>
+
+	    <!-- 定义更新操作，参数类型为Category -->
+	    <update id="update" parameterType="Category" >
+	        update category_ set name=#{name} where id=#{id}    
+	    </update>
+	    
+	    <!-- 定义查询所有操作，返回结果类型为Category -->
+	    <select id="list" resultType="Category">
+	        select * from   category_      
+	        <!-- 判断是否有分页参数 -->
+	        <if test="start!=null and count!=null">
+                    limit #{start},#{count}
+            </if>
+	    </select>
+	    
+	    <!-- 定义查询总数操作，返回结果类型为int -->
+	    <select id="total" resultType="int">
+	        select count(*) from   category_      
+	    </select>	    	    
+	</mapper>
